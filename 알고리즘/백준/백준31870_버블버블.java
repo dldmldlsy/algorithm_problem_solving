@@ -22,9 +22,11 @@ public class Main {
         int cnt2 = 0;  // 내림차순 버블 정렬 시 swap 횟수
         int k = 1;     // 버블 정렬에서 단계마다 비교할 범위 조절
         int tmp;
+        boolean swapped = false;
 
         // 버블 정렬 시작 (전체 k단계 반복, n-1번 반복)
         while(k < n){
+            swapped = false;
             for(int i = 0; i <= n - 1 - k; i++) {
                 // 오름차순 정렬: 현재 값이 다음 값보다 크면 swap
                 if (arr[i] > arr[i + 1]) {
@@ -32,6 +34,7 @@ public class Main {
                     arr[i] = arr[i + 1];
                     arr[i + 1] = tmp;
                     cnt++;
+                    swapped = true;
                 }
                 // 내림차순 정렬: 현재 값이 다음 값보다 작으면 swap
                 if (arr2[i] < arr2[i + 1]){
@@ -39,7 +42,11 @@ public class Main {
                     arr2[i] = arr2[i + 1];
                     arr2[i + 1] = tmp;
                     cnt2++;
+                    swapped = true;
                 }
+            }
+            if(!swapped){ //swap 1번도 없었으면 break
+                break;
             }
             k++;
         }
