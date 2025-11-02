@@ -1,4 +1,5 @@
 //프로그래머스: 5명씩
+
 class Solution {
     public String[] solution(String[] names) {
         String[] answer = {};
