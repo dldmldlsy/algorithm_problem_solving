@@ -1,4 +1,3 @@
-//틀린 코드
 import java.util.*;
 
 class Solution {
@@ -11,7 +10,9 @@ class Solution {
                 if(num>=50&&num%2==0){
                     brr[i] = num/2;
                 }else if(num<50&&num%2==1){
-                    brr[i] = num+1;
+                    brr[i] = 2*num+1;
+                }else{
+                    brr[i] = num;
                 }
             }
         
